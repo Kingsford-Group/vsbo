@@ -8,7 +8,7 @@ rpy2: https://rpy2.github.io (since the R package tmvtnorm is used)
 
 To run ALEBO and HeSBO, Ax should be installed: https://ax.dev
 
-The fortran codes of MOPTA08 problem are included in this folder (mopta08_part1, mopta08_part2), please refer to https://gist.github.com/denis-bz/c951e3e59fb4d70fd1a52c41c3675187 for compiling it into python. 
+The fortran codes of MOPTA08 problem are included in this folder (mopta08_part1.zip, mopta08_part2.zip), please refer to https://gist.github.com/denis-bz/c951e3e59fb4d70fd1a52c41c3675187 for compiling it into python. 
 
 The file "VSBO_class.py" implements the VS-BO algorithm, the file "Experiments_script.py" shows how to run VS-BO as well as other baselines, and the file "plot_script.py" contains codes for drawing the figures in the manuscript. 
 
