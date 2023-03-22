@@ -1,4 +1,4 @@
-Cods for the manuscript "Computationally Efficient High-Dimensional Bayesian Optimization via Variable Selection", Yihang Shen and Carl Kingsford.
+Cods for the manuscript "Computationally Efficient High-Dimensional Bayesian Optimization via Variable Selection"
 
 The following python packages should be installed before using VS-BO: 
 
