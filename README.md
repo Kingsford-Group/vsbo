@@ -15,18 +15,18 @@ The file "VSBO_class.py" implements the VS-BO algorithm, the file "Experiments_s
 
 VS-BO has seven output files:
 
-X_*.npy: The query obtained for each iteration
-Y_*.npy: The output value obtained for each iteration
-Time_*.npy: The accumulated wall clock time for each iteration
-Time_process_*.npy: The accumulated CPU time for each iteration
-F_importance_val_*.npy: The importance scores of variables for each variable selection step
-F_rank_*.npy: Sorted variables for each variable selection step based on their importance scores
-F_chosen_*.npy: the chosen variables for each variable selection step. 
+* `X_*.npy`: The query obtained for each iteration
+* `Y_*.npy`: The output value obtained for each iteration
+* `Time_*.npy`: The accumulated wall clock time for each iteration
+* `Time_process_*.npy`: The accumulated CPU time for each iteration
+* `F_importance_val_*.npy`: The importance scores of variables for each variable selection step
+* `F_rank_*.npy`: Sorted variables for each variable selection step based on their importance scores
+* `F_chosen_*.npy`: the chosen variables for each variable selection step. 
 
 
 Every other baseline has four output files: 
 
-X_*.npy
-Y_*.npy
-Time_*.npy
-Time_process_*.npy
+* `X_*.npy`
+* `Y_*.npy`
+* `Time_*.npy`
+* `Time_process_*.npy`
