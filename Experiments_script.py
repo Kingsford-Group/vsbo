@@ -3,6 +3,7 @@ from VSBO_class import *
 ### some parameters
 N_FS = 20
 acq_optim_method = 'LBFGS'
+### use CMAES to sample unimportant variables
 less_important_sampling = 'CMAES_posterior'
 init_samples = 5
 
@@ -92,8 +93,10 @@ for test_id in range(1,21):
     #for one_budget in range(total_budget):
         iter_num+=1
         try:
+            ### GP fitting on important variables 
             BO_instance.GP_fitting_active(GP_Matern)
             BO_instance.BO_acq_optim_active(optim_method=acq_optim_method)
+            ### sampling on unimportant variables
             BO_instance.data_update(method=less_important_sampling,n_sampling=20)
             Times.append(time.time()-t0)
             T_process.append(time.process_time()-t1)
@@ -107,6 +110,10 @@ for test_id in range(1,21):
         if(iter_num%BO_instance.N_FS==0):
             try:
                 BO_instance.GP_fitting(GP_Matern)
+                ### We provide three methods for variable seletion
+                ### KLrel: the Grad-IS method introduced in our manuscript
+                ### ard: Automatic Relevence Determination, use the correlation length scales in the kernel function
+                ### fANOVA: use the functional ANOVA (https://pypi.org/project/fanova/)
                 BO_instance.variable_selection_2('KLrel')
             #BO_instance.variable_selection('KLrel')
             except ValueError as e:
