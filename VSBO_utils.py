@@ -51,6 +51,7 @@ import time
 from functools import wraps
 import signal,psutil
 from scipy.stats import special_ortho_group
+#from fanova import fANOVA
 
 import rpy2.robjects as ro
 import rpy2.robjects.numpy2ri
@@ -157,6 +158,18 @@ def FS_ARD(model):
     #pdb.set_trace()
     ARD = 1/model.covar_module.base_kernel.lengthscale[0]
     return (ARD/torch.max(ARD))
+
+def FS_fANOVA(fANOVA_X,fANOVA_Y,active_f_list,**kwargs):
+    #pdb.set_trace()
+    X = fANOVA_X[:,active_f_list].numpy()
+    Y = fANOVA_Y.numpy()
+    _,dim = X.shape
+    f = fANOVA(X,Y)
+    anova_list = []
+    for i in range(dim):
+        anova_list.append(f.quantify_importance((i, ))[(i,)]['individual importance'])
+    anova_tensor = torch.tensor(anova_list,device=device, dtype=dtype)
+    return anova_tensor/torch.max(anova_tensor)
 
 def FS_KLrel(model,dim,sampling_num=10000,if_round=[],**kwargs):
     #pdb.set_trace()
