@@ -1,5 +1,7 @@
 Cods for the manuscript "Computationally Efficient High-Dimensional Bayesian Optimization via Variable Selection"
 
+`git clone`
+
 The following python packages should be installed before using VS-BO: 
 
 BoTorch: https://botorch.org
