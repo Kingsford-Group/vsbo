@@ -8,6 +8,10 @@ To install the dependencies as:
 
 The detailed description of ALEBO can be found in `https://github.com/facebookresearch/alebo`. The dependencies required for ALEBO are already in the file `requirements.txt`. 
 
+The detailed description of ALEBO can be found in `https://github.com/aminnayebi/HesBO`. The dependencies required for HeSBO are already in the file `requirements.txt`. 
+
+To run SAASBO, please download the source codes: `git clone https://github.com/martinjankowiak/saasbo.git`. The dependencies required for SAASBO are already in the file `requirements.txt`. 
+
 The fortran codes of MOPTA08 problem are included in this folder (mopta08_part1.zip, mopta08_part2.zip), please refer to https://gist.github.com/denis-bz/c951e3e59fb4d70fd1a52c41c3675187 for compiling it into python. 
 
 The file "VSBO_class.py" implements the VS-BO algorithm, the file "Experiments_script.py" shows how to run VS-BO as well as other baselines except for SAASBO, the codes for running SAASBO is in saasbo_script.py, and the file "plot_script.py" contains codes for drawing the figures in the manuscript. 
