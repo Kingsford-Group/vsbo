@@ -11,6 +11,7 @@ scikit-learn==0.24.2
 ax-platform>=0.1.17
 jax==0.2.24
 numpyro==0.8.0
+matplotlib==3.0.2
 
 #To run SAASBO, please see: https://github.com/martinjankowiak/saasbo
 
