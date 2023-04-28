@@ -6,7 +6,7 @@ To install the dependencies as:
 
 `pip install -r requirements.txt`
 
-The detailed description of ALEBO can be found 
+The detailed description of ALEBO can be found in `https://github.com/facebookresearch/alebo`. The dependencies required for ALEBO are already in the file `requirements.txt`. 
 
 The fortran codes of MOPTA08 problem are included in this folder (mopta08_part1.zip, mopta08_part2.zip), please refer to https://gist.github.com/denis-bz/c951e3e59fb4d70fd1a52c41c3675187 for compiling it into python. 
 
