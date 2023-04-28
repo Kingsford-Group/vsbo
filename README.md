@@ -1,14 +1,12 @@
 Cods for the manuscript "Computationally Efficient High-Dimensional Bayesian Optimization via Variable Selection"
 
-`git clone`
+We use python==3.7 to run all the experiments. 
 
-The following python packages should be installed before using VS-BO: 
+To install the dependencies as:
 
-BoTorch: https://botorch.org
-pycma: https://github.com/CMA-ES/pycma
-rpy2: https://rpy2.github.io (since the R package tmvtnorm is used)
+`pip install -r requirements.txt`
 
-To run ALEBO and HeSBO, Ax should be installed: https://ax.dev
+
 
 The fortran codes of MOPTA08 problem are included in this folder (mopta08_part1.zip, mopta08_part2.zip), please refer to https://gist.github.com/denis-bz/c951e3e59fb4d70fd1a52c41c3675187 for compiling it into python. 
 
