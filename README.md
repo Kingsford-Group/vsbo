@@ -31,3 +31,5 @@ Every other baseline has four output files:
 * `Y_*.npy`
 * `Time_*.npy`
 * `Time_process_*.npy`
+
+To plot the regret curve versus iterations, use the following command: `python plot_iterations.py --input_path ./Branin/VSBO/ --output_path ./ --method VSBO --runs 20 --iterations 200 --best_value -0.44165457`, it will generate a figure called `curve_iterations.png`. 
