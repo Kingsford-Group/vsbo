@@ -33,3 +33,9 @@ Every other baseline has four output files:
 * `Time_process_*.npy`
 
 To plot the regret curve versus iterations, use the following command: `python plot_iterations.py --input_path ./Branin/VSBO/ --output_path ./ --method VSBO --runs 20 --iterations 200 --best_value -0.44165457`, it will generate a figure called `curve_iterations.png`. 
+
+To plot the regret curve versus wall clock times, use the following command: `python plot_times.py --input_path ./Branin/VSBO/ --output_path ./ --method VSBO --runs 20 --T_max 600 --best_value -0.44165457 --wct`, it will generate a figure called `curve_wct.png`. 
+
+To plot the regret curve versus CPU times, use the following command: `python plot_times.py --input_path ./Branin/VSBO/ --output_path ./ --method VSBO --runs 20 --T_max 8000 --best_value -0.44165457`, it will generate a figure called `curve_cput.png`. 
+
+Please choose T_max to be an integer value such that it can be divided by 100. 
