@@ -10,7 +10,6 @@ The detailed description of ALEBO can be found in `https://github.com/facebookre
 
 The detailed description of HeSBO can be found in `https://github.com/aminnayebi/HesBO`. The dependencies required for HeSBO are already in the file `requirements.txt`. 
 
-To run SAASBO, please download the source codes: `git clone https://github.com/martinjankowiak/saasbo.git`. The dependencies required for SAASBO are already in the file `requirements.txt`. 
 
 To run MOPTA08 function, first decompress the file `mopta_libs.zip`. There are two libraries, `libmopta.so` and `moptafunc.so`, in this `.zip` file, please put them into the same folder of the running script. For detailed instruction on compiling these two `.so` files, please see `https://gist.github.com/denis-bz/c951e3e59fb4d70fd1a52c41c3675187`.
 
