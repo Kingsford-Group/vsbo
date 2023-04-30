@@ -15,7 +15,7 @@ The detailed description of HeSBO can be found in `https://github.com/aminnayebi
 
 To run MOPTA08 function, first decompress the file `mopta_libs.zip`. There are two libraries, `libmopta.so` and `moptafunc.so`, in this `.zip` file, please put them into the same folder of the running script. For detailed instruction on compiling these two `.so` files, please see `https://gist.github.com/denis-bz/c951e3e59fb4d70fd1a52c41c3675187`.
 
-To run VS-BO, use the following command: `python VSBO_run.py --obj_func Branin --method VSBO`, it will automatically create an output path `./Branin/VSBO/`. VS-BO has seven output files, and all these output files will be in the output path:
+To run VS-BO, use the following command: `python VSBO_run.py --obj_func Branin --method VSBO` (obj_func can also be Hartmann6/StyblinskiTang4/rover/mopta). it will automatically create an output path `./Branin/VSBO/`. VS-BO has seven output files, and all these output files will be in the output path:
 
 * `X_*.npy`: The query obtained for each iteration
 * `Y_*.npy`: The output value obtained for each iteration
@@ -27,7 +27,7 @@ To run VS-BO, use the following command: `python VSBO_run.py --obj_func Branin -
 
 To run SAASBO, please see the instructions in the folder `./saasbo_scripts`
 
-To run other baselines, use the command such as: `python baseline_run.py --obj_func Branin --method vanillaBO/rembo/rembo_interleave/alebo/hesbo`. It will automatically create an output path `./Branin/vanillaBO/`, which contains the following four output files:
+To run other baselines, use the command such as: `python baseline_run.py --obj_func Branin --method vanillaBO` (methods can also be rembo/rembo_interleave/alebo/hesbo). It will automatically create an output path `./Branin/vanillaBO/`, which contains the following four output files:
 
 * `X_*.npy`
 * `Y_*.npy`
