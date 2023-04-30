@@ -10,14 +10,14 @@ parser = argparse.ArgumentParser('plot versus iteration')
 parser.add_argument('--input_path', type=str)
 parser.add_argument('--output_path', type=str)
 parser.add_argument('--method',type=str)
-parser.add_argument('--runs',type=int)
-parser.add_argument('--iterations',type=int)
+parser.add_argument('--runs',help='number of runs',type=int)
+parser.add_argument('--iterations',help='number of iterations for each run',type=int)
 parser.add_argument('--best_value',type=float,default=None)
+parser.add_argument('--not_max',action='store_true')
 #parser.add_argument('--epochs',type=int,default=4000)
 #parser.add_argument('--sgld_gamma',type=float,default=0.35)
 #parser.add_argument('--folder_index',type=int)
 args = parser.parse_args()
-
 
 
 
@@ -45,10 +45,15 @@ def get_Y_curve(input_path,Y_num,interval_num,if_max=1,init_sample=5):
     return Y_tot[:i]
 
 
-if args.best_value is None:
-    Y_tot = get_Y_curve(args.input_path,args.runs,args.iterations)
+if args.not_max:
+    if_max = 0
 else:
-    Y_tot = args.best_value-get_Y_curve(args.input_path,args.runs,args.iterations)
+    if_max = 1
+
+if args.best_value is None:
+    Y_tot = get_Y_curve(args.input_path,args.runs,args.iterations,if_max=if_max)
+else:
+    Y_tot = args.best_value-get_Y_curve(args.input_path,args.runs,args.iterations,if_max=if_max)
 Y_err = stats.sem(Y_tot)
 Y_mean = np.mean(Y_tot,axis=0)
 
@@ -59,6 +64,7 @@ plt.errorbar(range(0,args.iterations),Y_mean,Y_err,label=args.method)
 ax.tick_params(axis="x", labelsize=18)
 ax.tick_params(axis="y", labelsize=18)
 plt.xlabel("Number of iterations", fontsize=20)
+plt.legend(fontsize="18")
 if args.best_value is None:
     plt.ylabel("Best value found", fontsize=20)
 else:

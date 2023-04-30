@@ -15,6 +15,8 @@ parser.add_argument('--runs',help='number of runs',type=int)
 parser.add_argument('--T_max',type=int)
 parser.add_argument('--best_value',type=float,default=None)
 parser.add_argument('--wct',action='store_true')
+parser.add_argument('--not_max',action='store_true')
+parser.add_argument('--not_accumuate',action='store_true')
 #parser.add_argument('--cput',action='cput')
 args = parser.parse_args()
 
@@ -61,11 +63,21 @@ if args.wct:
 else:
     T_type = 1
 
+if args.not_max:
+    if_max = 0
+else:
+    if_max = 1
+
+if args.not_accumuate:
+    if_accumuate = 0
+else:
+    if_accumuate = 1
+
 interval = 100
 if args.best_value is None:
-    Y_tot = get_T_Y_data(args.input_path,args.runs,args.T_max,interval,T_type=T_type)
+    Y_tot = get_T_Y_data(args.input_path,args.runs,args.T_max,interval,T_type=T_type,if_max=if_max,if_accumuate=if_accumuate)
 else:
-    Y_tot = args.best_value-get_T_Y_data(args.input_path,args.runs,args.T_max,interval,T_type=T_type)
+    Y_tot = args.best_value-get_T_Y_data(args.input_path,args.runs,args.T_max,interval,T_type=T_type,if_max=if_max,if_accumuate=if_accumuate)
 Y_err = stats.sem(Y_tot)
 Y_mean = np.mean(Y_tot,axis=0)
 
@@ -76,6 +88,7 @@ ax.set_prop_cycle(color=["blue","orange","green","red","purple","brown","pink","
 plt.errorbar(range(0,args.T_max,int(args.T_max/interval)),Y_mean,Y_err,label=args.method)
 ax.tick_params(axis="x", labelsize=18)
 ax.tick_params(axis="y", labelsize=18)
+plt.ylim(0, 8)
 if T_type==0:
     plt.xlabel("Wall clock time (seconds)", fontsize=20)
 else:
