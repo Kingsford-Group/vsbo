@@ -14,11 +14,7 @@ To run SAASBO, please download the source codes: `git clone https://github.com/m
 
 To run MOPTA08 function, first decompress the file `mopta_libs.zip`. There are two libraries, `libmopta.so` and `moptafunc.so`, in this `.zip` file, please put them into the same folder of the running script. For detailed instruction on compiling these two `.so` files, please see `https://gist.github.com/denis-bz/c951e3e59fb4d70fd1a52c41c3675187`.
 
-
-The file "VSBO_class.py" implements the VS-BO algorithm, the file "Experiments_script.py" shows how to run VS-BO as well as other baselines except for SAASBO, the codes for running SAASBO is in saasbo_script.py, and the file "plot_script.py" contains codes for drawing the figures in the manuscript. 
-
-
-VS-BO has seven output files:
+To run VS-BO, use the following command: `python VSBO_run.py --obj_func Branin --method VSBO`, it will automatically create an output path `./Branin/VSBO/`. VS-BO has seven output files, and all these output files will be in the output path:
 
 * `X_*.npy`: The query obtained for each iteration
 * `Y_*.npy`: The output value obtained for each iteration
