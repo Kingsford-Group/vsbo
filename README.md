@@ -24,6 +24,7 @@ To run VS-BO, use the following command: `python VSBO_run.py --obj_func Branin -
 * `F_rank_*.npy`: Sorted variables for each variable selection step based on their importance scores
 * `F_chosen_*.npy`: the chosen variables for each variable selection step. 
 
+To run SAASBO, please see the instructions in the folder `./saasbo_scripts`
 
 Every other baseline has four output files: 
 
