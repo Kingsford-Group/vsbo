@@ -6,7 +6,7 @@ from scipy import stats
 import argparse
 
 
-parser = argparse.ArgumentParser('plot versus iteration')
+parser = argparse.ArgumentParser('plot versus time')
 parser.add_argument('--input_path', type=str)
 parser.add_argument('--output_path', type=str)
 parser.add_argument('--method',type=str)
@@ -17,6 +17,7 @@ parser.add_argument('--best_value',type=float,default=None)
 parser.add_argument('--wct',action='store_true')
 #parser.add_argument('--cput',action='cput')
 args = parser.parse_args()
+
 
 
 def get_T_Y_data(input_path,Y_num,T_max,interval_num,T_type=0,if_max=1,if_accumuate=1):
