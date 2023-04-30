@@ -105,7 +105,7 @@ if not os.path.exists(output_path):
     os.makedirs(output_path)
 '''
 
-output_path = "./"+args.obj_func+"/saasbo_lowcomp/"
+output_path = "./"+args.obj_func+"/saasbo/"
 makedirs(output_path)
 
 
@@ -133,8 +133,8 @@ for test_id in range(1,11):
         init_samples,
         seed=seed,
         alpha=0.01,
-        num_warmup=128,
-        num_samples=128,
+        num_warmup=256,
+        num_samples=256,
         thinning=32,
         device="cpu",
     )
