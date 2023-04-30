@@ -1,7 +1,7 @@
 #To run VS-BO, we need:
 
 botorch==0.5.1
-pytorch==1.10.0+cu102
+torch==1.13.1+cu117
 gpytorch==1.5.1
 numpy==1.21.6
 cma==3.0.3
