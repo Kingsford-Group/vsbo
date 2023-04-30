@@ -6,6 +6,8 @@ To install the dependencies as:
 
 `pip install -r requirements.txt`
 
+We also need to use an R package tmvtnorm (`https://cran.r-project.org/web/packages/tmvtnorm/index.html`), please refer to `https://www.dataquest.io/blog/install-package-r/` for instructions on how to install a package in R. 
+
 The detailed description of ALEBO can be found in `https://github.com/facebookresearch/alebo`. The dependencies required for ALEBO are already in the file `requirements.txt`. 
 
 The detailed description of HeSBO can be found in `https://github.com/aminnayebi/HesBO`. The dependencies required for HeSBO are already in the file `requirements.txt`. 
