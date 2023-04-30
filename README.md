@@ -39,3 +39,5 @@ To plot the regret curve versus wall clock times, use the following command: `py
 To plot the regret curve versus CPU times, use the following command: `python plot_times.py --input_path ./Branin/VSBO/ --output_path ./ --method VSBO --runs 20 --T_max 8000 --best_value -0.44165457`, it will generate a figure called `curve_cput.png`. 
 
 Please choose T_max to be an integer value such that it can be divided by 100. 
+
+To plot the bar figure of the total frequency of being chosen as important for each variable, use the following command: `python plot_important_freq.py --input_path ./Branin/VSBO/ --output_path ./ --iterations 200 --runs 20 --vs_freq 20`
