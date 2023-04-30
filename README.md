@@ -8,7 +8,7 @@ To install the dependencies as:
 
 The detailed description of ALEBO can be found in `https://github.com/facebookresearch/alebo`. The dependencies required for ALEBO are already in the file `requirements.txt`. 
 
-The detailed description of ALEBO can be found in `https://github.com/aminnayebi/HesBO`. The dependencies required for HeSBO are already in the file `requirements.txt`. 
+The detailed description of HeSBO can be found in `https://github.com/aminnayebi/HesBO`. The dependencies required for HeSBO are already in the file `requirements.txt`. 
 
 To run SAASBO, please download the source codes: `git clone https://github.com/martinjankowiak/saasbo.git`. The dependencies required for SAASBO are already in the file `requirements.txt`. 
 
