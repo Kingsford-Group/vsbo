@@ -3,6 +3,8 @@ tmvtnorm = importr('tmvtnorm')
 rpy2.robjects.numpy2ri.activate()
 
 
+sf_stop = 10.0
+
 class BOtorch(object):
     def __init__(self,input_dim,obj_func,obj_func_kwargs={},bounds=[],*args,**kwargs):
         #self.X = X
@@ -195,7 +197,7 @@ class VSBO(BOtorch):
                         get_loss_interval+=1
                         new_indices = torch.cat([new_indices,torch.tensor([self.indices[j]])])
                         continue
-                    if(prev_loss - sub_final_loss<loss_interv/10.0):
+                    if(prev_loss - sub_final_loss<loss_interv/sf_stop):
                         break
                     else:
                         loss_interv = prev_loss - sub_final_loss
@@ -211,7 +213,7 @@ class VSBO(BOtorch):
         kwargs_old = kwargs.copy()
         _,self.indices = torch.sort(self.FS_important_scores,descending=True)
         print(self.indices)
-        self.stepwise_forward(0,torch.tensor([0 for k in range(self.X_dim)],dtype=torch.bool,device=device),**kwargs)
+        self.stepwise_forward_2(0,torch.tensor([0 for k in range(self.X_dim)],dtype=torch.bool,device=device),**kwargs)
     def stepwise_forward_2(self,start_point,important_variables,**kwargs):
         #pdb.set_trace()
         get_loss_interval = -1
@@ -237,7 +239,7 @@ class VSBO(BOtorch):
                 prev_loss = sub_final_loss
                 get_loss_interval+=1
             else:
-                if(loss_interv<=0 or prev_loss - sub_final_loss<loss_interv/10.0):
+                if(loss_interv<=0 or prev_loss - sub_final_loss<loss_interv/sf_stop):
                     if_fs = 1
                     self.active_f_list = torch.tensor([0 for k in range(self.X_dim)],dtype=torch.bool,device=device)
                     self.active_f_list[self.indices[:j]] = 1

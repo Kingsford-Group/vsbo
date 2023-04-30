@@ -49,7 +49,7 @@ from torch.autograd import Variable
 import cma
 import time
 from functools import wraps
-import signal,psutil
+#import signal,psutil
 from scipy.stats import special_ortho_group
 #from fanova import fANOVA
 
@@ -59,19 +59,22 @@ from rpy2.robjects.packages import importr
 from rpy2.robjects import FloatVector
 
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+#device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cpu")
 dtype = torch.double
 temp_model = None
 
 
 class GP_Matern(ExactGP,GPyTorchModel):
     _num_outputs = 1
-    def __init__(self,train_X,train_Y,if_noise=False,**kwargs):
+    def __init__(self,train_X,train_Y,**kwargs):
         super().__init__(train_X, train_Y.squeeze(-1), GaussianLikelihood())
         self.mean_module = ConstantMean()
         self.covar_module = ScaleKernel(base_kernel=MaternKernel(ard_num_dims=train_X.shape[-1]),)
+        '''
         if if_noise:
             self.covar_module = NoiseKernel(self.covar_module)
+        '''
         self.to(train_X)
     def forward(self,X):
         mean_X = self.mean_module(X)
