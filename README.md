@@ -27,7 +27,7 @@ To run VS-BO, use the following command: `python VSBO_run.py --obj_func Branin -
 
 To run SAASBO, please see the instructions in the folder `./saasbo_scripts`
 
-To run other baselines, use the command such as: `python baseline_run.py --obj_func Branin --method vanillaBO`. It will automatically create an output path `./Branin/vanillaBO/`, which contains the following four output files:
+To run other baselines, use the command such as: `python baseline_run.py --obj_func Branin --method vanillaBO/rembo/rembo_interleave/alebo/hesbo`. It will automatically create an output path `./Branin/vanillaBO/`, which contains the following four output files:
 
 * `X_*.npy`
 * `Y_*.npy`
