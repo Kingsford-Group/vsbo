@@ -13,7 +13,7 @@ The detailed description of ALEBO can be found in `https://github.com/facebookre
 The detailed description of HeSBO can be found in `https://github.com/aminnayebi/HesBO`. The dependencies required for HeSBO are already in the file `requirements.txt`. 
 
 
-To run MOPTA08 function, first decompress the file `mopta_libs.zip`. There are two libraries, `libmopta.so` and `moptafunc.so`, in this `.zip` file, please put them into the same folder of the running script. For detailed instruction on compiling these two `.so` files, please see `https://gist.github.com/denis-bz/c951e3e59fb4d70fd1a52c41c3675187`.
+To run MOPTA08 function, first decompress the file `mopta_libs.zip`. There are two libraries, `libmopta.so` and `moptafunc.so`, in this `.zip` file, please put them into the same folder of the running script. For detailed instructions on compiling these two `.so` files, please see `https://gist.github.com/denis-bz/c951e3e59fb4d70fd1a52c41c3675187`.
 
 To run VS-BO, use the following command: `python VSBO_run.py --obj_func Branin --method VSBO` (obj_func can also be Hartmann6/StyblinskiTang4/rover/mopta). it will automatically create an output path `./Branin/VSBO/`. VS-BO has seven output files, and all these output files will be in the output path:
 
