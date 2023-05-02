@@ -5,6 +5,7 @@ import argparse
 parser = argparse.ArgumentParser('VS-BO')
 parser.add_argument('--obj_func', type=str)
 parser.add_argument('--method', type=str)
+args = parser.parse_args()
 
 
 def makedirs(dirname):
