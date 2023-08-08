@@ -27,7 +27,7 @@ from botorch.models.gp_regression import FixedNoiseGP
 from botorch.models.gpytorch import GPyTorchModel
 from botorch.models.model import Model
 from botorch.posteriors.posterior import Posterior
-from botorch.sampling.samplers import SobolQMCNormalSampler
+#from botorch.sampling.normal import SobolQMCNormalSampler
 from botorch.utils.transforms import convert_to_target_pre_hook, t_batch_mode_transform
 from torch import Tensor
 from torch.distributions import Normal

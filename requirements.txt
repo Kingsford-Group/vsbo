@@ -1,21 +1,22 @@
-#To run VS-BO, we need:
+#To run VS-BO,
 
-botorch==0.5.1
-torch==1.13.1+cu117
-gpytorch==1.5.1
-numpy==1.21.6
-cma==3.0.3
-scipy==1.7.3
-rpy2==3.5.10
-scikit-learn==0.24.2
+botorch==0.8.5
+torch==2.0.1+cu117
+gpytorch==1.10
+numpy==1.24.2
+cma==3.3.0
+scipy==1.10.0
+rpy2==3.5.13
+scikit-learn==1.2.2
 ax-platform>=0.1.17
-jax==0.2.24
-numpyro==0.8.0
-matplotlib==3.0.2
+jax==0.4.13
+jaxlib==0.4.13
+numpyro==0.12.1
+matplotlib==3.6.3
 
 #To run SAASBO, please see: https://github.com/martinjankowiak/saasbo
 
 #To run ALEBO or HesBO please use Ax platform
 #ax>=0.1.12
 
-#To run LineBO plese se: https://github.com/kirschnj/LineBO
+#To run LineBO plese see: https://github.com/kirschnj/LineBO
