@@ -1,4 +1,4 @@
-Cods for the manuscript "Computationally Efficient High-Dimensional Bayesian Optimization via Variable Selection"
+Cods for the manuscript "Computationally Efficient High-Dimensional Bayesian Optimization via Variable Selection" sfdsfsdfsd
 
 Our method can be run on python==3.9
 
