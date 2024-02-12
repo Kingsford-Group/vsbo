@@ -1,4 +1,4 @@
-Cods for the manuscript "Computationally Efficient High-Dimensional Bayesian Optimization via Variable Selection"
+Cods for the manuscript "Computationally Efficient High-Dimensional Bayesian Optimization via Variable Selection", the arXiv version is https://arxiv.org/abs/2109.09264. This work has been accepted in AutoML 2023, the camera ready version is https://openreview.net/forum?id=QXKWSM0rFCK1.
 
 Our method can be run on python==3.9
 
